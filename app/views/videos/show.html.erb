@@ -1,0 +1,29 @@
+<p>
+  <b>Name:</b>
+  <%=h @video.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @video.description %>
+  </p>
+
+  <% if @video.status == "completed" %>
+    <script type="text/javascript" src="http://www.jeroenwijering.com/embed/swfobject.js"></script>
+ 
+    <div id="player">This text will be replaced</div>
+ 
+      <script type="text/javascript">
+        var so = new SWFObject('/jw/embed/player.swf','mpl','470','320','9');
+        so.addParam('allowscriptaccess','always');
+        so.addParam('allowfullscreen','true');
+        so.addParam('flashvars','&file=<%=@video.flash_url%>');
+       so.write('player');
+   </script>
+  <% else %>
+    Video is processing:  Current State is [<%= @video.status %>] <br />
+  <% end %>
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

@@ -1,0 +1,19 @@
+
+I havent added these to environment.rb yet, so manually install the gems
+
+sudo gem install rvideo
+sudo port install ffmpeg +lame +libogg +vorbis +faac +faad +xvid +x264 +a52 (if your on osx)
+sudo gem install flvtool2
+sudo gem install aws-s3
+
+script/plugin install git://github.com/thoughtbot/paperclip.git
+script/plugin install git://github.com/tra/spawn.git
+
+#recommend http://rubyforge.org/projects/ap4r/
+
+Test File upload should now be working and dropping file in uploads
+
+
+work in progress...
+ substitute your long running task code inside the video model process_video method
+
